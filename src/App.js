@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./additional.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { useState } from "react";
+
+import ListDataHandler from "./lib/DataHandler";
+import List from "./components/List";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const _ListDataHandler = ListDataHandler();
+
+	return (
+		<div className="App">
+			<Header>Lecture Notification System</Header>
+			<div className="container">
+				<List title="공지사항"></List>
+				<List title="강의내용"></List>
+			</div>
+			<Footer>소프트웨어개발실습2 20211343 김동현</Footer>
+		</div>
+	);
 }
 
 export default App;
